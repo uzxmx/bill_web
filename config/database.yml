@@ -1,0 +1,26 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: bill_web_development
+  host: localhost
+  username: bill_web
+  password: bill_web
+
+test:
+  <<: *default
+  database: bill_web_test
+  host: localhost
+  username: bill_web
+  password: bill_web
+
+production:
+  <<: *default
+  database: <%= ENV['DB_DATABASE'] || 'bill_web_production' %>
+  host: <%= ENV['DB_HOST'] %>
+  port: <%= ENV['DB_PORT'] || 5432 %>
+  username: <%= ENV['DB_USERNAME'] %>
+  password: <%= ENV['DB_PASSWORD'] %>

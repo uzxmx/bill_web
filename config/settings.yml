@@ -1,0 +1,12 @@
+redis_url: <%= ENV['REDIS_URL'] || 'redis://localhost/1' %>
+wechat_mp:
+  app_id: <%= ENV['WECHAT_MP_APP_ID'] %>
+  app_secret: <%= ENV['WECHAT_MP_APP_SECRET'] %>
+qiniu:
+  access_key: <%= ENV['QINIU_ACCESS_KEY'] %>
+  secret_key: <%= ENV['QINIU_SECRET_KEY'] %>
+  image:
+    bucket: <%= ENV['QINIU_IMAGE_BUCKET'] %>
+    domain: <%= ENV['QINIU_IMAGE_DOMAIN'] %>
+    scheme: <%= ENV['QINIU_IMAGE_SCHEME'] %>
+    domain_with_scheme: <%= ENV['QINIU_IMAGE_DOMAIN_WITH_SCHEME'] %>
