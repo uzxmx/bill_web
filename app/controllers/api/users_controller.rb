@@ -23,6 +23,7 @@ class Api::UsersController < Api::BaseController
     end
 
     openid, session_key = resp['openid'], resp['session_key']
+    # data = WechatUtils.decrypt(params[:encrypted_data], params[:iv], session_key)
     data = Hashie::Mash.new(params[:user_info])
 
     wechat_user = nil

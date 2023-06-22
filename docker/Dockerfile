@@ -3,6 +3,9 @@ FROM ruby:3.0.2-alpine3.14
 
 WORKDIR /app
 
+ARG Foo=foo
+ENV BUNDLE_USER_HOME=/tmp/.bundle
+RUN mkdir -p $BUNDLE_USER_HOME
 COPY Gemfile* ./
 
 # Use mirror for apk package
